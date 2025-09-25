@@ -1,7 +1,6 @@
-const { NextResponse } = require("next/server");
+import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/connect";
 import User from "@/model/User";
-import { Password } from "@mui/icons-material";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
@@ -42,7 +41,6 @@ export async function POST(req) {
         phone: phoneNumber,
         otp: otp,
         otpExpiry: expiresAt,
-        password: null,
       });
     }
 
